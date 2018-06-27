@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/trainingForTheDayHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Dagens pass"
+        android:textAppearance="@style/HeaderText" />
+
+
+    <TextView
+        android:id="@+id/firstExerciseHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trainingForTheDayHeader"
+        android:layout_marginStart="12dp"
+        android:text="Squats"
+        android:textAppearance="@style/SmallHeaderText"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/mainTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstExerciseHeader"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:stretchColumns="1,2,3">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow android:id="@+id/tableRow1">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/bla1"
+                android:layout_column="2"
+                android:text="1 X 5"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/bla2"
+                android:layout_column="3"
+                android:text="100kg"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/bla3"
+                android:layout_column="4"
+                android:text="(50%)"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow android:id="@+id/tableRow2">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/bla11"
+                android:layout_column="2"
+                android:text="1 X 5+"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/bla22"
+                android:layout_column="3"
+                android:text="100kg"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/bla33"
+                android:layout_column="4"
+                android:text="(60%)"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+    </TableLayout>
+
+
+</RelativeLayout>
