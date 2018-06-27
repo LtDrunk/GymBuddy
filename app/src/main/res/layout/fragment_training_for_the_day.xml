@@ -84,7 +84,7 @@
             <TextView
                 android:id="@+id/bla11"
                 android:layout_column="2"
-                android:text="1 X 5+"
+                android:text="1 X 5"
                 android:textAppearance="@style/NormalText" />
 
             <TextView
@@ -109,7 +109,44 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/dividerColor" />
+
+        <TableRow android:id="@+id/tableRow3">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/bla111"
+                android:layout_column="2"
+                android:text="1 X 5+"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/bla222"
+                android:layout_column="3"
+                android:text="100kg"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/bla333"
+                android:layout_column="4"
+                android:text="(70%)"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
     </TableLayout>
+
 
 
 </RelativeLayout>
