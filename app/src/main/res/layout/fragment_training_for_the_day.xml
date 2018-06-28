@@ -9,144 +9,327 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:text="Dagens pass"
+        android:text="@string/daily_routine"
         android:textAppearance="@style/HeaderText" />
 
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseHeader"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/trainingForTheDayHeader"-->
+    <!--android:layout_marginStart="12dp"-->
+    <!--android:textAppearance="@style/SmallHeaderText"-->
+    <!--android:textStyle="bold" />-->
 
-    <TextView
-        android:id="@+id/firstExerciseHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/trainingForTheDayHeader"
-        android:layout_marginStart="12dp"
-        android:text="Squats"
-        android:textAppearance="@style/SmallHeaderText"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <!--<TableLayout-->
+    <!--android:id="@+id/firstExerciseTableLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/firstExerciseHeader"-->
+    <!--android:paddingEnd="12dp"-->
+    <!--android:paddingStart="12dp"-->
+    <!--android:stretchColumns="1,2,3">-->
 
-    <TableLayout
-        android:id="@+id/mainTableLayout"
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/main_sets"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/firstExerciseFirstSetDone"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFirstSetTotalRepetitions"-->
+    <!--android:layout_column="2"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFirstSetTotalWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFirstSetPercentageOf1RM"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseSecondSetTotalRepetitions"-->
+    <!--android:layout_column="2"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseSecondSetTotalWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseSecondSetPercentageOf1RM"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseThirdSetTotalRepetitions"-->
+    <!--android:layout_column="2"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseThirdSetTotalWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseThirdSetPercentageOf1RM"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/fsl_sets"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:layout_column="2"-->
+    <!--android:text="@string/one_by_five"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFirstFslWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFirstFslPercentage"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:layout_column="2"-->
+    <!--android:text="@string/one_by_five"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseSecondFslWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseSecondFslPercentage"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:layout_column="2"-->
+    <!--android:text="@string/one_by_five"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseThirdFslWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseThirdFslPercentage"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:layout_column="2"-->
+    <!--android:text="@string/one_by_five"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFourthFslWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFourthFslPercentage"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+
+    <!--<TableRow>-->
+
+    <!--<CheckBox-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_column="1" />-->
+
+    <!--<TextView-->
+    <!--android:layout_column="2"-->
+    <!--android:text="@string/one_by_five"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFifthFslWeight"-->
+    <!--android:layout_column="3"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/firstExerciseFifthFslPercentage"-->
+    <!--android:layout_column="4"-->
+    <!--android:textAppearance="@style/NormalText" />-->
+
+    <!--<View-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_column="5" />-->
+    <!--</TableRow>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/dividerColor" />-->
+    <!--</TableLayout>-->
+
+    <se.tobias.gymbuddy.ExerciseTable
+        android:id="@+id/firstExercise"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/firstExerciseHeader"
-        android:paddingEnd="12dp"
-        android:paddingStart="12dp"
-        android:stretchColumns="1,2,3">
+        android:layout_below="@id/trainingForTheDayHeader" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/dividerColor" />
-
-        <TableRow android:id="@+id/tableRow1">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1" />
-
-            <TextView
-                android:id="@+id/bla1"
-                android:layout_column="2"
-                android:text="1 X 5"
-                android:textAppearance="@style/NormalText" />
-
-            <TextView
-                android:id="@+id/bla2"
-                android:layout_column="3"
-                android:text="100kg"
-                android:textAppearance="@style/NormalText" />
-
-            <TextView
-                android:id="@+id/bla3"
-                android:layout_column="4"
-                android:text="(50%)"
-                android:textAppearance="@style/NormalText" />
-
-            <View
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_column="5" />
-        </TableRow>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/dividerColor" />
-
-        <TableRow android:id="@+id/tableRow2">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1" />
-
-            <TextView
-                android:id="@+id/bla11"
-                android:layout_column="2"
-                android:text="1 X 5"
-                android:textAppearance="@style/NormalText" />
-
-            <TextView
-                android:id="@+id/bla22"
-                android:layout_column="3"
-                android:text="100kg"
-                android:textAppearance="@style/NormalText" />
-
-            <TextView
-                android:id="@+id/bla33"
-                android:layout_column="4"
-                android:text="(60%)"
-                android:textAppearance="@style/NormalText" />
-
-            <View
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_column="5" />
-        </TableRow>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/dividerColor" />
-
-        <TableRow android:id="@+id/tableRow3">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="1" />
-
-            <TextView
-                android:id="@+id/bla111"
-                android:layout_column="2"
-                android:text="1 X 5+"
-                android:textAppearance="@style/NormalText" />
-
-            <TextView
-                android:id="@+id/bla222"
-                android:layout_column="3"
-                android:text="100kg"
-                android:textAppearance="@style/NormalText" />
-
-            <TextView
-                android:id="@+id/bla333"
-                android:layout_column="4"
-                android:text="(70%)"
-                android:textAppearance="@style/NormalText" />
-
-            <View
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_column="5" />
-        </TableRow>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/dividerColor" />
-    </TableLayout>
-
+    <se.tobias.gymbuddy.ExerciseTable
+        android:id="@+id/secondExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstExercise"
+        android:layout_marginTop="35dp" />
 
 
 </RelativeLayout>

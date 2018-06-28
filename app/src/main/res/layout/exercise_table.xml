@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/exerciseHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textAppearance="@style/SmallHeaderText"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/exerciseTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:stretchColumns="1,2,3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_sets"
+            android:textAppearance="@style/NormalText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:id="@+id/firstSetCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/firstSetTotalRepetitions"
+                android:layout_column="2"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/firstSetTotalWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/firstSetPercentageOfOneRepMax"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/secondSetTotalRepetitions"
+                android:layout_column="2"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/secondSetTotalWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/secondSetPercentageOfOneRepMax"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:id="@+id/thirdSetTotalRepetitions"
+                android:layout_column="2"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/thirdSetTotalWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/thirdSetPercentageOfOneRepMax"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/fsl_sets"
+            android:textAppearance="@style/NormalText" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_column="2"
+                android:text="@string/one_by_five"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/firstFslWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/firstFslPercentage"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_column="2"
+                android:text="@string/one_by_five"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/secondFslWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/secondFslPercentage"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_column="2"
+                android:text="@string/one_by_five"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/thirdFslWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/thirdFslPercentage"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_column="2"
+                android:text="@string/one_by_five"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/fourthFslWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/fourthFslPercentage"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+
+        <TableRow>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+            <TextView
+                android:layout_column="2"
+                android:text="@string/one_by_five"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/fifthFslWeight"
+                android:layout_column="3"
+                android:textAppearance="@style/NormalText" />
+
+            <TextView
+                android:id="@+id/fifthFslPercentage"
+                android:layout_column="4"
+                android:textAppearance="@style/NormalText" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_column="5" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/dividerColor" />
+    </TableLayout>
+
+</LinearLayout>
+
+
