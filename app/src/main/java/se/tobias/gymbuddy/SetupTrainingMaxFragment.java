@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -51,7 +52,6 @@ public class SetupTrainingMaxFragment extends Fragment {
             sharedPreferences = _context.getSharedPreferences("SetupOneRepMax", MODE_PRIVATE);
             OneRepMax oneRepMaxFromDisk = LoadOneRepMaxFromSharedPreferences();
             if(oneRepMaxFromDisk != null){
-                //TODO Fill values
                 SetValuesInAllTextInputs(oneRepMaxFromDisk);
             }
         }
@@ -101,6 +101,12 @@ public class SetupTrainingMaxFragment extends Fragment {
             String deadliftOneRepMax = deadliftTextInput.getText().toString();
             String overheadPressOneRepMax = overheadPressTextInput.getText().toString();
 
+            if(benchPressOneRepMax.equals("") || squatOneRepMax.equals("") || deadliftOneRepMax.equals("") || overheadPressOneRepMax.equals("")){
+                //TODO: Change to a text field with red text instead, like a classic form error?
+                Toast.makeText(_context, "Please fill in all the values before saving", Toast.LENGTH_LONG).show();
+                return;
+            }
+
             int benchPressOneRepMaxAsInteger = Integer.parseInt(benchPressOneRepMax);
             int squatOneRepMaxAsInteger = Integer.parseInt(squatOneRepMax);
             int deadliftOneRepMaxAsInteger = Integer.parseInt(deadliftOneRepMax);
@@ -108,6 +114,8 @@ public class SetupTrainingMaxFragment extends Fragment {
 
             OneRepMax oneRepMax = new OneRepMax(benchPressOneRepMaxAsInteger, squatOneRepMaxAsInteger, deadliftOneRepMaxAsInteger, overheadPressOneRepMaxAsInteger);
             SaveOneRepMaxToSharedPreferences(oneRepMax);
+
+            Toast.makeText(_context, "Values has been saved", Toast.LENGTH_LONG).show();
         }
     };
 }
