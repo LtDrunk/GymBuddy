@@ -62,11 +62,11 @@ public class ExerciseTable extends LinearLayout{
         fifthFslWeight = findViewById(R.id.fifthFslWeight);
         fifthFslPercentage = findViewById(R.id.fifthFslPercentage);
 
-        setValuesBasedOnTrainingDay();
+//        setValuesBasedOnTrainingDay();
     }
 
-    private void setValuesBasedOnTrainingDay() {
-        exerciseHeader.setText("Squats");
+    public void setValuesBasedOnTrainingDay(String exerciseName) {
+        exerciseHeader.setText(exerciseName);
         firstSetTotalRepetitions.setText("1 x 5");
         firstSetTotalWeight.setText("80kg");
         firstSetPercentageOf1RM.setText("(50%)");

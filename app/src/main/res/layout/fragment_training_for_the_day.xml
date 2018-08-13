@@ -12,10 +12,68 @@
         android:text="@string/daily_routine"
         android:textAppearance="@style/HeaderText" />
 
+    <RadioGroup
+        android:id="@+id/weekChoiceGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/trainingForTheDayHeader"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/firstWeekRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/week_1" />
+
+        <RadioButton
+            android:id="@+id/secondWeekRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/week_2" />
+
+        <RadioButton
+            android:id="@+id/thirdWeekRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/week_3" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/dayChoiceGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weekChoiceGroup"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/firstDayRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/day_1" />
+
+        <RadioButton
+            android:id="@+id/secondDayRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/day_2" />
+
+        <RadioButton
+            android:id="@+id/thirdDayRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/day_3" />
+    </RadioGroup>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/trainingForTheDayHeader">
+        android:layout_below="@id/dayChoiceGroup">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,4 +93,6 @@
 
         </RelativeLayout>
     </ScrollView>
+
+
 </RelativeLayout>

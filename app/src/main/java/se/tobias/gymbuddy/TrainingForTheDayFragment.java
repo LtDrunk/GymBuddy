@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -18,6 +20,12 @@ import static android.content.Context.MODE_PRIVATE;
 public class TrainingForTheDayFragment extends Fragment {
     private Context _context;
     private SharedPreferences sharedPreferences = null;
+    private RadioGroup weekChoiceGroup = null;
+    private RadioButton firstWeekRadioButton = null;
+    private RadioGroup dayChoiceGroup = null;
+    private RadioButton firstDayRadioButton = null;
+    private ExerciseTable firstExercise = null;
+    private ExerciseTable secondExercise = null;
 
     private static final String ONE_REP_MAX_KEY = "OneRepMaxKey";
 
@@ -30,6 +38,17 @@ public class TrainingForTheDayFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        weekChoiceGroup = view.findViewById(R.id.weekChoiceGroup);
+        weekChoiceGroup.setOnCheckedChangeListener(onWeekCheckedChangeListener);
+        firstWeekRadioButton = view.findViewById(R.id.firstWeekRadioButton);
+        firstWeekRadioButton.setChecked(true);
+        dayChoiceGroup = view.findViewById(R.id.dayChoiceGroup);
+        dayChoiceGroup.setOnCheckedChangeListener(onDayCheckedChangeListener);
+        firstDayRadioButton = view.findViewById(R.id.firstDayRadioButton);
+        firstDayRadioButton.setChecked(true);
+        firstExercise = view.findViewById(R.id.firstExercise);
+        secondExercise = view.findViewById(R.id.secondExercise);
 
         _context = getContext();
 
@@ -55,6 +74,34 @@ public class TrainingForTheDayFragment extends Fragment {
 
     }
 
+    private RadioGroup.OnCheckedChangeListener onWeekCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            switch (checkedId){
+                case R.id.firstWeekRadioButton:
+
+                    break;
+                case R.id.secondWeekRadioButton:
+                    break;
+                case R.id.thirdWeekRadioButton:
+                    break;
+            }
+        }
+    };
+
+    private RadioGroup.OnCheckedChangeListener onDayCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            switch (checkedId){
+                case R.id.firstDayRadioButton:
+                    break;
+                case R.id.secondDayRadioButton:
+                    break;
+                case R.id.thirdDayRadioButton:
+                    break;
+            }
+        }
+    };
 
     private OneRepMax LoadOneRepMaxFromSharedPreferences() {
         Gson gson = new Gson();

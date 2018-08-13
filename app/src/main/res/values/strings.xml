@@ -14,4 +14,10 @@
     <string name="daily_routine">Dagens pass</string>
     <string name="training_of_the_day">Training of the day</string>
     <string name="fsl_sets">FSL sets</string>
+    <string name="week_1">Week 1</string>
+    <string name="week_2">Week 2</string>
+    <string name="week_3">Week 3</string>
+    <string name="day_1">Day 1</string>
+    <string name="day_2">Day 2</string>
+    <string name="day_3">Day 3</string>
 </resources>
