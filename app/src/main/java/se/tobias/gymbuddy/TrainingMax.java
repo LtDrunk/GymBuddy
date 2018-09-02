@@ -1,12 +1,12 @@
 package se.tobias.gymbuddy;
 
-public class OneRepMax {
+public class TrainingMax {
     private int BenchPressMax;
     private int SquatMax;
     private int DeadliftMax;
     private int OverheadPressMax;
 
-    public OneRepMax(int benchPressMax, int squatMax, int deadliftMax, int overheadPressMax) {
+    public TrainingMax(int benchPressMax, int squatMax, int deadliftMax, int overheadPressMax) {
         BenchPressMax = benchPressMax;
         SquatMax = squatMax;
         DeadliftMax = deadliftMax;

@@ -7,10 +7,14 @@
     <string name="deadlift">Deadlift</string>
     <string name="overhead_press">Overhead Press</string>
     <string name="kg">kg</string>
-    <string name="one_rep_max">1RM</string>
-    <string name="save_one_rep_max">Save 1RM</string>
+    <string name="training_max">Training Max</string>
+    <string name="save_training_max">Save TM</string>
     <string name="main_sets">Main sets</string>
     <string name="one_by_five">1 x 5</string>
+    <string name="one_by_five_plus">1 x 5+</string>
+    <string name="one_by_three">1 x 3</string>
+    <string name="one_by_three_plus">1 x 3+</string>
+    <string name="one_by_one_plus">1 x 1+</string>
     <string name="daily_routine">Dagens pass</string>
     <string name="training_of_the_day">Training of the day</string>
     <string name="fsl_sets">FSL sets</string>
@@ -20,4 +24,11 @@
     <string name="day_1">Day 1</string>
     <string name="day_2">Day 2</string>
     <string name="day_3">Day 3</string>
+    <string name="percent_65">65%</string>
+    <string name="percent_75">75%</string>
+    <string name="percent_85">85%</string>
+    <string name="percent_70">70%</string>
+    <string name="percent_80">80%</string>
+    <string name="percent_90">90%</string>
+    <string name="percent_95">95%</string>
 </resources>

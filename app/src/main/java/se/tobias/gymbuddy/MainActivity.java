@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetupTrainingMaxFragment()).commit();
-            navigationView.setCheckedItem(R.id.navigation_item_one_rep_max);
+            navigationView.setCheckedItem(R.id.navigation_item_training_max);
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.navigation_item_one_rep_max:
+            case R.id.navigation_item_training_max:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SetupTrainingMaxFragment()).commit();
                 break;
             case R.id.nav_chat:

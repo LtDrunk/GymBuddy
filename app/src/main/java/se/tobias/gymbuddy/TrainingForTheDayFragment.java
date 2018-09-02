@@ -11,11 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
 
 import static android.content.Context.MODE_PRIVATE;
+import static se.tobias.gymbuddy.ExerciseTable.DAY_ONE;
+import static se.tobias.gymbuddy.ExerciseTable.DAY_THREE;
+import static se.tobias.gymbuddy.ExerciseTable.DAY_TWO;
+import static se.tobias.gymbuddy.ExerciseTable.WEEK_ONE;
+import static se.tobias.gymbuddy.ExerciseTable.WEEK_THREE;
+import static se.tobias.gymbuddy.ExerciseTable.WEEK_TWO;
 
 public class TrainingForTheDayFragment extends Fragment {
     private Context _context;
@@ -26,8 +31,11 @@ public class TrainingForTheDayFragment extends Fragment {
     private RadioButton firstDayRadioButton = null;
     private ExerciseTable firstExercise = null;
     private ExerciseTable secondExercise = null;
+    private TrainingMax _trainingMax = null;
+    private String _chosenWeek = WEEK_ONE;
+    private String _chosenDay = DAY_ONE;
 
-    private static final String ONE_REP_MAX_KEY = "OneRepMaxKey";
+    private static final String TRAINING_MAX_KEY = "TrainingMaxKey";
 
     @Nullable
     @Override
@@ -38,6 +46,18 @@ public class TrainingForTheDayFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        _context = getContext();
+        firstExercise = view.findViewById(R.id.firstExercise);
+        secondExercise = view.findViewById(R.id.secondExercise);
+
+        if (_context != null) {
+            sharedPreferences = _context.getSharedPreferences("SetupTrainingMax", MODE_PRIVATE);
+            TrainingMax trainingMaxFromDisk = LoadTrainingMaxFromSharedPreferences();
+            if (trainingMaxFromDisk != null) {
+                _trainingMax = trainingMaxFromDisk;
+            }
+        }
+
 
         weekChoiceGroup = view.findViewById(R.id.weekChoiceGroup);
         weekChoiceGroup.setOnCheckedChangeListener(onWeekCheckedChangeListener);
@@ -47,44 +67,65 @@ public class TrainingForTheDayFragment extends Fragment {
         dayChoiceGroup.setOnCheckedChangeListener(onDayCheckedChangeListener);
         firstDayRadioButton = view.findViewById(R.id.firstDayRadioButton);
         firstDayRadioButton.setChecked(true);
-        firstExercise = view.findViewById(R.id.firstExercise);
-        secondExercise = view.findViewById(R.id.secondExercise);
-
-        _context = getContext();
-
-        if (_context != null) {
-            sharedPreferences = _context.getSharedPreferences("SetupOneRepMax", MODE_PRIVATE);
-            OneRepMax oneRepMaxFromDisk = LoadOneRepMaxFromSharedPreferences();
-            if(oneRepMaxFromDisk != null){
-                CalculateTheWeightsForEachRep(oneRepMaxFromDisk);
-            }
-        }
-    }
-
-    private void CalculateTheWeightsForEachRep(OneRepMax oneRepMaxFromDisk) {
-
-        /**
-         * 1) Calculate Train Max (TM) from 1RM, this is done with 1RM * 0.9 (90%)
-         * 2) Check where in cycle we are (First, second or third week). This will give different percentages to multiply with.
-         * 3) Check which training day it is (First, second or third. Alt, Monday, Wednesday or Friday) this will decide which excercises are relevant
-         * 4) Populate the now hard coded fields with info.
-         */
-
-
-
     }
 
     private RadioGroup.OnCheckedChangeListener onWeekCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
-            switch (checkedId){
-                case R.id.firstWeekRadioButton:
-
-                    break;
-                case R.id.secondWeekRadioButton:
-                    break;
-                case R.id.thirdWeekRadioButton:
-                    break;
+            if (_trainingMax != null) {
+                switch (checkedId) {
+                    case R.id.firstWeekRadioButton:
+                        _chosenWeek = WEEK_ONE;
+                        switch (_chosenDay) {
+                            case DAY_ONE:
+                                firstExercise.setupDetailsForWeekOne(_trainingMax.getSquatMax());
+                                secondExercise.setupDetailsForWeekOne(_trainingMax.getBenchPressMax());
+                                break;
+                            case DAY_TWO:
+                                firstExercise.setupDetailsForWeekOne(_trainingMax.getDeadliftMax());
+                                secondExercise.setupDetailsForWeekOne(_trainingMax.getOverheadPressMax());
+                                break;
+                            default:
+                                firstExercise.setupDetailsForWeekOne(_trainingMax.getBenchPressMax());
+                                secondExercise.setupDetailsForWeekOne(_trainingMax.getSquatMax());
+                                break;
+                        }
+                        break;
+                    case R.id.secondWeekRadioButton:
+                        _chosenWeek = WEEK_TWO;
+                        switch (_chosenDay) {
+                            case DAY_ONE:
+                                firstExercise.setupDetailsForWeekTwo(_trainingMax.getSquatMax());
+                                secondExercise.setupDetailsForWeekTwo(_trainingMax.getBenchPressMax());
+                                break;
+                            case DAY_TWO:
+                                firstExercise.setupDetailsForWeekTwo(_trainingMax.getDeadliftMax());
+                                secondExercise.setupDetailsForWeekTwo(_trainingMax.getOverheadPressMax());
+                                break;
+                            default:
+                                firstExercise.setupDetailsForWeekTwo(_trainingMax.getBenchPressMax());
+                                secondExercise.setupDetailsForWeekTwo(_trainingMax.getSquatMax());
+                                break;
+                        }
+                        break;
+                    case R.id.thirdWeekRadioButton:
+                        _chosenWeek = WEEK_THREE;
+                        switch (_chosenDay) {
+                            case DAY_ONE:
+                                firstExercise.setupDetailsForWeekThree(_trainingMax.getSquatMax());
+                                secondExercise.setupDetailsForWeekThree(_trainingMax.getBenchPressMax());
+                                break;
+                            case DAY_TWO:
+                                firstExercise.setupDetailsForWeekThree(_trainingMax.getDeadliftMax());
+                                secondExercise.setupDetailsForWeekThree(_trainingMax.getOverheadPressMax());
+                                break;
+                            default:
+                                firstExercise.setupDetailsForWeekThree(_trainingMax.getBenchPressMax());
+                                secondExercise.setupDetailsForWeekThree(_trainingMax.getSquatMax());
+                                break;
+                        }
+                        break;
+                }
             }
         }
     };
@@ -92,23 +133,74 @@ public class TrainingForTheDayFragment extends Fragment {
     private RadioGroup.OnCheckedChangeListener onDayCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
-            switch (checkedId){
+            switch (checkedId) {
                 case R.id.firstDayRadioButton:
+                    _chosenDay = DAY_ONE;
+                    firstExercise.setExerciseHeader(_context.getString(R.string.squat));
+                    secondExercise.setExerciseHeader(_context.getString(R.string.bench_press));
+                    switch (_chosenWeek) {
+                        case WEEK_ONE:
+                            firstExercise.setupDetailsForWeekOne(_trainingMax.getSquatMax());
+                            secondExercise.setupDetailsForWeekOne(_trainingMax.getBenchPressMax());
+                            break;
+                        case WEEK_TWO:
+                            firstExercise.setupDetailsForWeekTwo(_trainingMax.getSquatMax());
+                            secondExercise.setupDetailsForWeekTwo(_trainingMax.getBenchPressMax());
+                            break;
+                        case WEEK_THREE:
+                            firstExercise.setupDetailsForWeekThree(_trainingMax.getSquatMax());
+                            secondExercise.setupDetailsForWeekThree(_trainingMax.getBenchPressMax());
+                            break;
+                    }
                     break;
                 case R.id.secondDayRadioButton:
+                    _chosenDay = DAY_TWO;
+                    firstExercise.setExerciseHeader(_context.getString(R.string.deadlift));
+                    secondExercise.setExerciseHeader(_context.getString(R.string.overhead_press));
+                    switch (_chosenWeek) {
+                        case WEEK_ONE:
+                            firstExercise.setupDetailsForWeekOne(_trainingMax.getDeadliftMax());
+                            secondExercise.setupDetailsForWeekOne(_trainingMax.getOverheadPressMax());
+                            break;
+                        case WEEK_TWO:
+                            firstExercise.setupDetailsForWeekTwo(_trainingMax.getDeadliftMax());
+                            secondExercise.setupDetailsForWeekTwo(_trainingMax.getOverheadPressMax());
+                            break;
+                        case WEEK_THREE:
+                            firstExercise.setupDetailsForWeekThree(_trainingMax.getDeadliftMax());
+                            secondExercise.setupDetailsForWeekThree(_trainingMax.getOverheadPressMax());
+                            break;
+                    }
                     break;
                 case R.id.thirdDayRadioButton:
+                    _chosenDay = DAY_THREE;
+                    firstExercise.setExerciseHeader(_context.getString(R.string.bench_press));
+                    secondExercise.setExerciseHeader(_context.getString(R.string.squat));
+                    switch (_chosenWeek) {
+                        case WEEK_ONE:
+                            firstExercise.setupDetailsForWeekOne(_trainingMax.getBenchPressMax());
+                            secondExercise.setupDetailsForWeekOne(_trainingMax.getSquatMax());
+                            break;
+                        case WEEK_TWO:
+                            firstExercise.setupDetailsForWeekTwo(_trainingMax.getBenchPressMax());
+                            secondExercise.setupDetailsForWeekTwo(_trainingMax.getSquatMax());
+                            break;
+                        case WEEK_THREE:
+                            firstExercise.setupDetailsForWeekThree(_trainingMax.getBenchPressMax());
+                            secondExercise.setupDetailsForWeekThree(_trainingMax.getSquatMax());
+                            break;
+                    }
                     break;
             }
         }
     };
 
-    private OneRepMax LoadOneRepMaxFromSharedPreferences() {
+    private TrainingMax LoadTrainingMaxFromSharedPreferences() {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(ONE_REP_MAX_KEY, "");
-        if(json.equals("")){
+        String json = sharedPreferences.getString(TRAINING_MAX_KEY, "");
+        if (json.equals("")) {
             return null;
         }
-        return gson.fromJson(json, OneRepMax.class);
+        return gson.fromJson(json, TrainingMax.class);
     }
 }

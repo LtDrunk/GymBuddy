@@ -20,13 +20,13 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class SetupTrainingMaxFragment extends Fragment {
     private Context _context;
-    private Button saveOneRepMaxButton = null;
+    private Button saveTrainingMaxButton = null;
     private EditText benchPressTextInput = null;
     private EditText squatTextInput = null;
     private EditText deadliftTextInput = null;
     private EditText overheadPressTextInput = null;
 
-    private static final String ONE_REP_MAX_KEY = "OneRepMaxKey";
+    private static final String TRAINING_MAX_KEY = "TrainingMaxKey";
     private SharedPreferences sharedPreferences = null;
 
     @Nullable
@@ -40,29 +40,29 @@ public class SetupTrainingMaxFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         _context = getContext();
-        saveOneRepMaxButton = view.findViewById(R.id.saveOneRepMaxButton);
+        saveTrainingMaxButton = view.findViewById(R.id.saveTrainingMaxButton);
         benchPressTextInput = view.findViewById(R.id.benchPressTextInput);
         squatTextInput = view.findViewById(R.id.squatTextInput);
         deadliftTextInput = view.findViewById(R.id.deadliftTextInput);
         overheadPressTextInput = view.findViewById(R.id.overheadPressTextInput);
 
-        saveOneRepMaxButton.setOnClickListener(saveOneRepMaxButtonClickListener);
+        saveTrainingMaxButton.setOnClickListener(saveTrainingMaxButtonClickListener);
 
         if (_context != null) {
-            sharedPreferences = _context.getSharedPreferences("SetupOneRepMax", MODE_PRIVATE);
-            OneRepMax oneRepMaxFromDisk = LoadOneRepMaxFromSharedPreferences();
-            if(oneRepMaxFromDisk != null){
-                SetValuesInAllTextInputs(oneRepMaxFromDisk);
+            sharedPreferences = _context.getSharedPreferences("SetupTrainingMax", MODE_PRIVATE);
+            TrainingMax trainingMaxFromDisk = LoadTrainingMaxFromSharedPreferences();
+            if(trainingMaxFromDisk != null){
+                SetValuesInAllTextInputs(trainingMaxFromDisk);
             }
         }
     }
 
-    private void SetValuesInAllTextInputs(OneRepMax oneRepMaxFromDisk){
+    private void SetValuesInAllTextInputs(TrainingMax trainingMaxFromDisk){
         //TODO gör om från int to string
-        String benchPressMaxString = String.valueOf(oneRepMaxFromDisk.getBenchPressMax());
-        String squatMaxString = String.valueOf(oneRepMaxFromDisk.getSquatMax());
-        String deadliftMaxString = String.valueOf(oneRepMaxFromDisk.getDeadliftMax());
-        String overheadPressMaxString = String.valueOf(oneRepMaxFromDisk.getOverheadPressMax());
+        String benchPressMaxString = String.valueOf(trainingMaxFromDisk.getBenchPressMax());
+        String squatMaxString = String.valueOf(trainingMaxFromDisk.getSquatMax());
+        String deadliftMaxString = String.valueOf(trainingMaxFromDisk.getDeadliftMax());
+        String overheadPressMaxString = String.valueOf(trainingMaxFromDisk.getOverheadPressMax());
 
         benchPressTextInput.setText(benchPressMaxString, TextView.BufferType.EDITABLE);
         squatTextInput.setText(squatMaxString, TextView.BufferType.EDITABLE);
@@ -70,50 +70,50 @@ public class SetupTrainingMaxFragment extends Fragment {
         overheadPressTextInput.setText(overheadPressMaxString, TextView.BufferType.EDITABLE);
     }
 
-    private void SaveOneRepMaxToSharedPreferences(OneRepMax oneRepMax) {
+    private void SaveTrainingMaxToSharedPreferences(TrainingMax trainingMax) {
         Gson gson = new Gson();
-        String json = gson.toJson(oneRepMax);
+        String json = gson.toJson(trainingMax);
 
         if (_context != null) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(ONE_REP_MAX_KEY, json);
+            editor.putString(TRAINING_MAX_KEY, json);
             editor.apply();
         } else {
             //TODO: ERROR HANDLING
         }
     }
 
-    private OneRepMax LoadOneRepMaxFromSharedPreferences() {
+    private TrainingMax LoadTrainingMaxFromSharedPreferences() {
         Gson gson = new Gson();
-        String json = sharedPreferences.getString(ONE_REP_MAX_KEY, "");
+        String json = sharedPreferences.getString(TRAINING_MAX_KEY, "");
         if(json.equals("")){
             return null;
         }
-        return gson.fromJson(json, OneRepMax.class);
+        return gson.fromJson(json, TrainingMax.class);
     }
 
 
-    private View.OnClickListener saveOneRepMaxButtonClickListener = new View.OnClickListener() {
+    private View.OnClickListener saveTrainingMaxButtonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String benchPressOneRepMax = benchPressTextInput.getText().toString();
-            String squatOneRepMax = squatTextInput.getText().toString();
-            String deadliftOneRepMax = deadliftTextInput.getText().toString();
-            String overheadPressOneRepMax = overheadPressTextInput.getText().toString();
+            String benchPressTrainingMax = benchPressTextInput.getText().toString();
+            String squatTrainingMax = squatTextInput.getText().toString();
+            String deadliftTrainingMax = deadliftTextInput.getText().toString();
+            String overheadPressTrainingMax = overheadPressTextInput.getText().toString();
 
-            if(benchPressOneRepMax.equals("") || squatOneRepMax.equals("") || deadliftOneRepMax.equals("") || overheadPressOneRepMax.equals("")){
+            if(benchPressTrainingMax.equals("") || squatTrainingMax.equals("") || deadliftTrainingMax.equals("") || overheadPressTrainingMax.equals("")){
                 //TODO: Change to a text field with red text instead, like a classic form error?
                 Toast.makeText(_context, "Please fill in all the values before saving", Toast.LENGTH_LONG).show();
                 return;
             }
 
-            int benchPressOneRepMaxAsInteger = Integer.parseInt(benchPressOneRepMax);
-            int squatOneRepMaxAsInteger = Integer.parseInt(squatOneRepMax);
-            int deadliftOneRepMaxAsInteger = Integer.parseInt(deadliftOneRepMax);
-            int overheadPressOneRepMaxAsInteger = Integer.parseInt(overheadPressOneRepMax);
+            int benchPressTrainingMaxAsInteger = Integer.parseInt(benchPressTrainingMax);
+            int squatTrainingMaxAsInteger = Integer.parseInt(squatTrainingMax);
+            int deadliftTrainingMaxAsInteger = Integer.parseInt(deadliftTrainingMax);
+            int overheadPressTrainingMaxAsInteger = Integer.parseInt(overheadPressTrainingMax);
 
-            OneRepMax oneRepMax = new OneRepMax(benchPressOneRepMaxAsInteger, squatOneRepMaxAsInteger, deadliftOneRepMaxAsInteger, overheadPressOneRepMaxAsInteger);
-            SaveOneRepMaxToSharedPreferences(oneRepMax);
+            TrainingMax trainingMax = new TrainingMax(benchPressTrainingMaxAsInteger, squatTrainingMaxAsInteger, deadliftTrainingMaxAsInteger, overheadPressTrainingMaxAsInteger);
+            SaveTrainingMaxToSharedPreferences(trainingMax);
 
             Toast.makeText(_context, "Values has been saved", Toast.LENGTH_LONG).show();
         }

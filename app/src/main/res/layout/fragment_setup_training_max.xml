@@ -19,7 +19,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="12dp"
-            android:text="@string/one_rep_max"
+            android:text="@string/training_max"
             android:textAppearance="@style/HeaderText" />
 
     </RelativeLayout>
@@ -184,14 +184,14 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/saveOneRepMaxButton"
+        android:id="@+id/saveTrainingMaxButton"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/overheadPressLayout"
         android:layout_marginEnd="12dp"
         android:layout_marginTop="12dp"
-        android:text="@string/save_one_rep_max"
+        android:text="@string/save_training_max"
         android:textAllCaps="true"
         android:textAppearance="@style/NormalText" />
 

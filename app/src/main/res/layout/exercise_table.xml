@@ -50,7 +50,7 @@
                 android:textAppearance="@style/NormalText" />
 
             <TextView
-                android:id="@+id/firstSetPercentageOfOneRepMax"
+                android:id="@+id/firstSetPercentageOfTrainingMax"
                 android:layout_column="4"
                 android:textAppearance="@style/NormalText" />
 
@@ -83,7 +83,7 @@
                 android:textAppearance="@style/NormalText" />
 
             <TextView
-                android:id="@+id/secondSetPercentageOfOneRepMax"
+                android:id="@+id/secondSetPercentageOfTrainingMax"
                 android:layout_column="4"
                 android:textAppearance="@style/NormalText" />
 
@@ -116,7 +116,7 @@
                 android:textAppearance="@style/NormalText" />
 
             <TextView
-                android:id="@+id/thirdSetPercentageOfOneRepMax"
+                android:id="@+id/thirdSetPercentageOfTrainingMax"
                 android:layout_column="4"
                 android:textAppearance="@style/NormalText" />
 
