@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
     android:layout_marginBottom="100dp"
@@ -18,6 +18,26 @@
 
     <se.tobias.gymbuddy.AssistanceExercise
         android:id="@+id/firstAssistanceExercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <se.tobias.gymbuddy.AssistanceExercise
+        android:id="@+id/secondAssistanceExercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <se.tobias.gymbuddy.AssistanceExercise
+        android:id="@+id/thirdAssistanceExercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <se.tobias.gymbuddy.AssistanceExercise
+        android:id="@+id/fourthAssistanceExercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <se.tobias.gymbuddy.AssistanceExercise
+        android:id="@+id/fifthAssistanceExercise"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
