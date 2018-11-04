@@ -36,6 +36,15 @@ public class ExerciseTable extends LinearLayout{
     public static final String DAY_ONE = "Day One";
     public static final String DAY_TWO = "Day Two";
     public static final String DAY_THREE = "Day Three";
+    private static final double FIRST_SET_OF_WEEK_ONE_MULTIPLIER = 0.65;
+    private static final double SECOND_SET_OF_WEEK_ONE_MULTIPLIER = 0.75;
+    private static final double THIRD_SET_OF_WEEK_ONE_MULTIPLIER = 0.85;
+    private static final double FIRST_SET_OF_WEEK_TWO_MULTIPLIER = 0.7;
+    private static final double SECOND_SET_OF_WEEK_TWO_MULTIPLIER = 0.8;
+    private static final double THIRD_SET_OF_WEEK_TWO_MULTIPLIER = 0.9;
+    private static final double FIRST_SET_OF_WEEK_THREE_MULTIPLIER = 0.75;
+    private static final double SECOND_SET_OF_WEEK_THREE_MULTIPLIER = 0.85;
+    private static final double THIRD_SET_OF_WEEK_THREE_MULTIPLIER = 0.95;
 
 
     public ExerciseTable(Context context, @Nullable AttributeSet attrs) {
@@ -72,159 +81,120 @@ public class ExerciseTable extends LinearLayout{
     }
 
     public void setupDetailsForWeekOne(double exerciseTrainingMax){
-        double tempSetWeight;
-        String tempSetWeightAsString;
-        String tempSetWeightAsStringWithWeightSuffix;
-        int remainder;
+        String firstSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, FIRST_SET_OF_WEEK_ONE_MULTIPLIER);
+        String secondSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, SECOND_SET_OF_WEEK_ONE_MULTIPLIER);
+        String thirdSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, THIRD_SET_OF_WEEK_ONE_MULTIPLIER);
 
-        firstSetTotalRepetitions.setText(_context.getString(R.string.one_by_five));
+        firstSetTotalRepetitions.setText(R.string.one_by_five);
         firstSetPercentageOf1RM.setText(R.string.percent_65);
-        tempSetWeight = exerciseTrainingMax * 0.65f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        firstSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        firstFslPercentage.setText(R.string.percent_65);
-        firstFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        secondFslPercentage.setText(R.string.percent_65);
-        secondFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        thirdFslPercentage.setText(R.string.percent_65);
-        thirdFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        fourthFslPercentage.setText(R.string.percent_65);
-        fourthFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        fifthFslPercentage.setText(R.string.percent_65);
-        fifthFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        firstSetTotalWeight.setText(firstSetWeightAsStringWithSuffix);
 
         secondSetTotalRepetitions.setText(_context.getString(R.string.one_by_five));
         secondSetPercentageOf1RM.setText(R.string.percent_75);
-        tempSetWeight = exerciseTrainingMax * 0.75f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        secondSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        secondSetTotalWeight.setText(secondSetWeightAsStringWithSuffix);
 
         thirdSetTotalRepetitions.setText(_context.getString(R.string.one_by_five_plus));
         thirdSetPercentageOf1RM.setText(R.string.percent_85);
-        tempSetWeight = exerciseTrainingMax * 0.85f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        thirdSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        thirdSetTotalWeight.setText(thirdSetWeightAsStringWithSuffix);
+
+
+        firstFslPercentage.setText(R.string.percent_65);
+        firstFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        secondFslPercentage.setText(R.string.percent_65);
+        secondFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        thirdFslPercentage.setText(R.string.percent_65);
+        thirdFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        fourthFslPercentage.setText(R.string.percent_65);
+        fourthFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        fifthFslPercentage.setText(R.string.percent_65);
+        fifthFslWeight.setText(firstSetWeightAsStringWithSuffix);
     }
 
     public void setupDetailsForWeekTwo(double exerciseTrainingMax){
-        double tempSetWeight;
-        String tempSetWeightAsString;
-        String tempSetWeightAsStringWithWeightSuffix;
-        int remainder;
+        String firstSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, FIRST_SET_OF_WEEK_TWO_MULTIPLIER);
+        String secondSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, SECOND_SET_OF_WEEK_TWO_MULTIPLIER);
+        String thirdSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, THIRD_SET_OF_WEEK_TWO_MULTIPLIER);
 
         firstSetTotalRepetitions.setText(_context.getString(R.string.one_by_three));
         firstSetPercentageOf1RM.setText(R.string.percent_70);
-        tempSetWeight = exerciseTrainingMax * 0.7f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        firstSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        firstFslPercentage.setText(R.string.percent_70);
-        firstFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        secondFslPercentage.setText(R.string.percent_70);
-        secondFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        thirdFslPercentage.setText(R.string.percent_70);
-        thirdFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        fourthFslPercentage.setText(R.string.percent_70);
-        fourthFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        fifthFslPercentage.setText(R.string.percent_70);
-        fifthFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        firstSetTotalWeight.setText(firstSetWeightAsStringWithSuffix);
 
         secondSetTotalRepetitions.setText(_context.getString(R.string.one_by_three));
         secondSetPercentageOf1RM.setText(R.string.percent_80);
-        tempSetWeight = exerciseTrainingMax * 0.8f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        secondSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        secondSetTotalWeight.setText(secondSetWeightAsStringWithSuffix);
 
         thirdSetTotalRepetitions.setText(_context.getString(R.string.one_by_three_plus));
         thirdSetPercentageOf1RM.setText(R.string.percent_90);
-        tempSetWeight = exerciseTrainingMax * 0.9f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        thirdSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        thirdSetTotalWeight.setText(thirdSetWeightAsStringWithSuffix);
+
+        firstFslPercentage.setText(R.string.percent_70);
+        firstFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        secondFslPercentage.setText(R.string.percent_70);
+        secondFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        thirdFslPercentage.setText(R.string.percent_70);
+        thirdFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        fourthFslPercentage.setText(R.string.percent_70);
+        fourthFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        fifthFslPercentage.setText(R.string.percent_70);
+        fifthFslWeight.setText(firstSetWeightAsStringWithSuffix);
     }
 
     public void setupDetailsForWeekThree(double exerciseTrainingMax){
+        String firstSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, FIRST_SET_OF_WEEK_THREE_MULTIPLIER);
+        String secondSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, SECOND_SET_OF_WEEK_THREE_MULTIPLIER);
+        String thirdSetWeightAsStringWithSuffix = getSetWeightAsStringWithWeightSuffix(exerciseTrainingMax, THIRD_SET_OF_WEEK_THREE_MULTIPLIER);
+
+        firstSetTotalRepetitions.setText(_context.getString(R.string.one_by_five));
+        firstSetPercentageOf1RM.setText(R.string.percent_75);
+        firstSetTotalWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        secondSetTotalRepetitions.setText(_context.getString(R.string.one_by_three));
+        secondSetPercentageOf1RM.setText(R.string.percent_85);
+        secondSetTotalWeight.setText(secondSetWeightAsStringWithSuffix);
+
+        thirdSetTotalRepetitions.setText(_context.getString(R.string.one_by_one_plus));
+        thirdSetPercentageOf1RM.setText(R.string.percent_95);
+        thirdSetTotalWeight.setText(thirdSetWeightAsStringWithSuffix);
+
+        firstFslPercentage.setText(R.string.percent_75);
+        firstFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        secondFslPercentage.setText(R.string.percent_75);
+        secondFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        thirdFslPercentage.setText(R.string.percent_75);
+        thirdFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        fourthFslPercentage.setText(R.string.percent_75);
+        fourthFslWeight.setText(firstSetWeightAsStringWithSuffix);
+
+        fifthFslPercentage.setText(R.string.percent_75);
+        fifthFslWeight.setText(firstSetWeightAsStringWithSuffix);
+    }
+
+    private String getSetWeightAsStringWithWeightSuffix(double exerciseTrainingMax, double set){
         double tempSetWeight;
         String tempSetWeightAsString;
         String tempSetWeightAsStringWithWeightSuffix;
         int remainder;
 
-        firstSetTotalRepetitions.setText(_context.getString(R.string.one_by_five));
-        firstSetPercentageOf1RM.setText(R.string.percent_75);
-        tempSetWeight = exerciseTrainingMax * 0.75f;
-        tempSetWeight = tempSetWeight / 1.25;
+        tempSetWeight = exerciseTrainingMax / 2;
+        tempSetWeight = tempSetWeight * set;
+        tempSetWeight = tempSetWeight / 1.25d;
         remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
+        tempSetWeight = remainder * 1.25d;
         tempSetWeightAsString = String.valueOf(tempSetWeight);
         tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        firstSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
 
-        firstFslPercentage.setText(R.string.percent_75);
-        firstFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        secondFslPercentage.setText(R.string.percent_75);
-        secondFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        thirdFslPercentage.setText(R.string.percent_75);
-        thirdFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        fourthFslPercentage.setText(R.string.percent_75);
-        fourthFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        fifthFslPercentage.setText(R.string.percent_75);
-        fifthFslWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        secondSetTotalRepetitions.setText(_context.getString(R.string.one_by_three));
-        secondSetPercentageOf1RM.setText(R.string.percent_85);
-        tempSetWeight = exerciseTrainingMax * 0.85f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        secondSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
-
-        thirdSetTotalRepetitions.setText(_context.getString(R.string.one_by_one_plus));
-        thirdSetPercentageOf1RM.setText(R.string.percent_95);
-        tempSetWeight = exerciseTrainingMax * 0.95f;
-        tempSetWeight = tempSetWeight / 1.25;
-        remainder = (int)(tempSetWeight + 0.5);
-        tempSetWeight = remainder * 1.25;
-        tempSetWeightAsString = String.valueOf(tempSetWeight);
-        tempSetWeightAsStringWithWeightSuffix = tempSetWeightAsString + _context.getString(R.string.kg);
-        thirdSetTotalWeight.setText(tempSetWeightAsStringWithWeightSuffix);
+        return tempSetWeightAsStringWithWeightSuffix;
     }
 
     public void setExerciseHeader(String exerciseName) {

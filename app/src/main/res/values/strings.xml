@@ -31,4 +31,8 @@
     <string name="percent_80">80%</string>
     <string name="percent_90">90%</string>
     <string name="percent_95">95%</string>
+    <string name="barbell">Barbell Weight</string>
+    <string name="fifteen">15 kg</string>
+    <string name="twenty">20kg </string>
+    <string name="assistance_exercises">Assistance Exercises</string>
 </resources>

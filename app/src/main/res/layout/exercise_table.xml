@@ -16,8 +16,8 @@
         android:id="@+id/exerciseTableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingEnd="12dp"
         android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:stretchColumns="1,2,3">
 
         <TextView

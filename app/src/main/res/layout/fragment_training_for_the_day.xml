@@ -91,6 +91,13 @@
                 android:layout_below="@id/firstExercise"
                 android:layout_marginTop="35dp" />
 
+            <se.tobias.gymbuddy.AssistanceExercisesContainer
+                android:id="@+id/assistanceExercises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/secondExercise"
+                android:layout_marginTop="35dp" />
+
         </RelativeLayout>
     </ScrollView>
 
